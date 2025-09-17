@@ -7,13 +7,16 @@ export default function Counter() {
 
   // delet er jonno Function banacci (evabeo funcction banano jay)
   const deleteArtist = (id) => {
-    console.log(id);
-    //
+    // console.log(id);
+    const filteredArray = artists.filter((artists) => artists.id !== id);
+    setArtists(filteredArray);
   };
 
   // add er jonno Function banacci
   const addSumith = () => {
     const sumith = { id: 4, name: "sumith" };
+    // evabe amar notun jinish add korte pabno etake bola hoy
+    // Emutabelity
     const newArrey = [...artists, sumith];
     setArtists(newArrey);
   };
@@ -35,8 +38,8 @@ export default function Counter() {
       <ul>
         {artists.map((artists) => (
           <li key={artists.id}>
-            {artists.name}{" "}
-            <button onClick={() => deleteArtist(artists.id)}>Delete</button>{" "}
+            {artists.name}
+            <button onClick={() => deleteArtist(artists.id)}>Delete</button>
           </li>
         ))}
       </ul>
